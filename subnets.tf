@@ -13,11 +13,10 @@ resource "aws_subnet" "public_subnets" {
 }
 
 resource "aws_subnet" "private_subnets" {
-  vpc_id                  = aws_vpc.tekup_test_vpc.id
-  cidr_block              = var.private_subnets_IPAddr[count.index]
-  availability_zone       = var.subnets_AZ[count.index]
-  count                   = 2
-  map_public_ip_on_launch = true
+  vpc_id            = aws_vpc.tekup_test_vpc.id
+  cidr_block        = var.private_subnets_IPAddr[count.index]
+  availability_zone = var.subnets_AZ[count.index]
+  count             = 2
 
   tags = {
     Name = var.private_subnets_tags[count.index]
