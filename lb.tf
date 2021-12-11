@@ -23,7 +23,7 @@ resource "aws_lb_target_group" "tekup_test_TG" {
 
 resource "aws_lb_listener" "tekup_test_listener" {
   load_balancer_arn = aws_lb.tekup_test_lb.arn
-  port              = "8000"
+  port              = "80"
   protocol          = "HTTP"
 
   default_action {
